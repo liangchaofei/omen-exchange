@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-09-16 13:45:29
+ * @LastEditTime: 2021-09-16 15:02:09
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /app/config-overrides.js
+ */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const GitRevisionPlugin = require('git-revision-webpack-plugin')
@@ -40,9 +48,9 @@ module.exports = (config, env) => {
     }),
   )
 
-  config.module.rules[2].oneOf.find(rule => rule.loader === require.resolve('file-loader')).options.name =
+  config?.module?.rules[2]?.oneOf?.find(rule => rule.loader === require.resolve('file-loader')).options.name =
     'static/media/[name].[ext]'
-  config.module.rules[2].oneOf.find(rule => rule.loader === require.resolve('url-loader')).options.name =
+  config?.module?.rules[2]?.oneOf?.find(rule => rule.loader === require.resolve('url-loader')).options.name =
     'static/media/[name].[ext]'
   config.optimization.moduleIds = 'hashed'
   return config
